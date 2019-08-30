@@ -1,24 +1,13 @@
 package net.douglashiura.us.serial;
 
-import java.io.Serializable;
+import java.util.UUID;
 
-public class Input implements Serializable {
+public class Input extends AbstractType {
 
 	private static final long serialVersionUID = 1L;
-	private String file;
-	private String content;
 
-	public Input(String file, String content) {
-		this.file = file;
-		this.content = content;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public String getFile() {
-		return file;
+	public Input(UUID uuid, String fixtureName, String value) {
+		super(uuid, fixtureName, value);
 	}
 
 }

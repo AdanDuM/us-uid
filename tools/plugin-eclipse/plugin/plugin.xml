@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-  
- 
- 
-  <extension
+	<extension
          point="org.eclipse.debug.ui.launchShortcuts">
       <shortcut
             label="Scenario"
-            icon="icons/us.gif"
+            icon="icons/test.png"
             modes="run, debug"
-            class="net.douglashiura.usuid.plugin.tiggres.Run"
-            id="net.douglashiura.usuid.shortCut">
+            class="net.douglashiura.scenario.plugin.tiggres.Run"
+            id="net.douglashiura.usuid.shortCut" >
          <contextualLaunch>
            <enablement>
              <with variable="selection">
@@ -28,6 +25,22 @@
       </shortcut>
 	</extension>
 	
+	<extension point="org.eclipse.ui.commands">
+      <command
+            name="Run Scenario"
+            description="Run scenario"
+            categoryId="org.eclipse.debug.ui.category.run"
+            id="com.example.ExampleLaunchShortcutId.debug"
+            defaultHandler="net.douglashiura.scenario.plugin.tiggres.ShortCutHandle">
+      </command>
+      <keyBinding
+            keySequence="M3+M1+X S"
+            contextId="org.eclipse.ui.globalScope"
+            commandId="com.example.ExampleLaunchShortcutId.debug"
+            keyConfigurationId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            >
+      </keyBinding>
+   </extension> 
 	
    <extension point="org.eclipse.ui.views">
 		<category
@@ -37,8 +50,23 @@
 		<view
 			category="view.Scenario"
 			name="Scenario"
-			class="net.douglashiura.usuid.plugin.editor.ScenarioView"
-			id="view.HelloWorldView">
+			class="net.douglashiura.scenario.plugin.editor.ScenarioView"
+			id="net.douglashiura.scenario.plugin.editor.ScenarioView"
+			icon="icons/diagram.png">
+		</view>
+	</extension>
+	
+	<extension point="org.eclipse.ui.views">
+		<category
+			name="Scenario"
+			id="view.Scenario">
+		</category>
+		<view
+			category="view.Scenario"
+			class="net.douglashiura.scenario.plugin.fixture.names.FixtureNamesView"
+			name="Fixture names"
+			id="net.douglashiura.scenario.plugin.fixture.names.FixtureNamesView"
+			icon="icons/naming.png">
 		</view>
 	</extension>
    
@@ -50,9 +78,70 @@
        </category>
        <view
              category="view.Scenario"
-             class="net.douglashiura.usuid.plugin.view.ViewTests"
-             id="view.ViewTests"
-             name="Tests">
+             class="net.douglashiura.scenario.plugin.view.ViewTests"
+             id="net.douglashiura.scenario.plugin.view.ViewTests"
+             name="Tests"
+             icon="icons/play.png">
        </view>
     </extension>
+    
+    <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any">
+         <command commandId="net.douglashiura.scenario.command.generate.glue.code"
+               id="GenerateGlueCode"
+               label="Generate glue code from US-UIDs"
+                icon="icons/code.png"
+                mnemonic="M1+P"
+               style="push"
+               tooltip="Genarate all glue code template from US-UIDs">
+         </command>
+      </menuContribution>
+   </extension>
+   
+   <extension point="org.eclipse.ui.handlers"> 
+     <handler commandId="net.douglashiura.scenario.command.generate.glue.code"
+            class="net.douglashiura.scenario.plugin.fixture.names.GlueCodeCommandHandler">
+     </handler>
+   </extension>
+   
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any">
+         <command commandId="net.douglashiura.scenario.command.download"
+               id="Download-us-uids"
+               label="Download of US-UIDs"
+                icon="icons/download.png"
+                mnemonic="M1+D"
+               style="push"
+               tooltip="Download of US-UIDs from a server">
+         </command>
+      </menuContribution>
+   </extension>
+   
+   <extension point="org.eclipse.ui.handlers"> 
+     <handler commandId="net.douglashiura.scenario.command.download"
+            class="net.douglashiura.scenario.plugin.download.DownloadCommandHandler">
+     </handler>
+   </extension>
+   
+   
+    <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any">
+         <command commandId="net.douglashiura.scenario.command.upload"
+               id="Upload-us-uids"
+               label="Upload of US-UIDs"
+                mnemonic="M1+U"
+                icon="icons/upload.png"
+               style="push"
+               tooltip="Upload of US-UIDs to the server">
+         </command>
+      </menuContribution>
+   </extension>
+   
+   <extension point="org.eclipse.ui.handlers"> 
+     <handler commandId="net.douglashiura.scenario.command.upload"
+            class="net.douglashiura.scenario.plugin.upload.UploadCommandHandler">
+     </handler>
+   </extension>
+       
+       
 </plugin>

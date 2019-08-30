@@ -1,8 +1,10 @@
 package net.douglashiura.leb.uid.scenario.ml.data;
 
+import java.util.UUID;
+
 public class Data {
 	private String scenario;
-	private String id;
+	private UUID uuid;
 	private String parent;
 	private Type type;
 	private String value;
@@ -42,12 +44,12 @@ public class Data {
 		this.fixture = fixture;
 	}
 
-	public String getId() {
-		return id;
+	public UUID getUuid() {
+		return uuid;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setUuid(UUID id) {
+		this.uuid = id;
 	}
 
 	public String getParent() {

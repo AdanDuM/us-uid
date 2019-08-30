@@ -1,8 +1,10 @@
 package net.douglashiura.leb.uid.scenario.ml.data;
 
+import java.util.UUID;
+
 public class DataInteraction {
 	
-	private String id;
+	private UUID id;
 	private String scenario;
 	private String fixture;
 	private Integer startDistance;
@@ -20,11 +22,11 @@ public class DataInteraction {
 		this.fixture = fixture;
 	}
 
-	public String getId() {
+	public UUID getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 

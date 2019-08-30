@@ -5,22 +5,21 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import net.douglashiura.leb.uid.scenario.servlet.util.FileName;
+import net.douglashiura.leb.uid.scenario.servlet.util.NotAFileException;
+
 public class Scenario {
 
 	private File file;
 	private File defaultDir;
+	private OnProject onProject;
+	private Boolean isWindows;
 
-	public Scenario(File file, File defaultDir) {
+	public Scenario(File file, File defaultDir, OnProject onProject) {
 		this.file = file;
 		this.defaultDir = defaultDir;
-	}
-
-	public String getName() {
-		return file.getName();
-	}
-
-	public File getFile() {
-		return file;
+		this.onProject = onProject;
+		isWindows = System.getProperty("os.name").startsWith("Windows");
 	}
 
 	public String getDocument() throws IOException {
@@ -37,7 +36,28 @@ public class Scenario {
 		stream.close();
 	}
 
-	public String getVirtualName() {
-		return file.getAbsolutePath().replace(defaultDir.getAbsolutePath(), "");
+	public String getVirtualName() throws NotAFileException {
+		return new FileName(file.getAbsolutePath().replace(defaultDir.getAbsolutePath(), ""), isWindows)
+				.getNameScenario();
+	}
+
+	public void create() throws IOException {
+		file.createNewFile();
+		write("".getBytes());
+	}
+
+	public void rename(FileName fileName) throws IOException, DuplicationScenarioException {
+		byte[] data = getDocument().getBytes();
+		delete();
+		onProject.createNewScenario(fileName).write(data);
+	}
+
+	public void delete() {
+		file.delete();
+	}
+
+	public void clone(FileName file) throws IOException, DuplicationScenarioException {
+		byte[] data = getDocument().getBytes();
+		onProject.createNewScenario(file).write(data);
 	}
 }

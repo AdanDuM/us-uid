@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.douglashiura.scenario"
+      label="Scenario"
+      version="1.0.11"
+      provider-name="LEB (Douglas Hiura Longo)">
+
+   <description url="http://agil.inf.ufsc.br/us/">
+      User Scenarios through User Interaction Diagrams (US-UIDs) is
+a format to Automated Acceptance Tests.
+Scenario is a plugin to execute US-UIDs.
+   </description>
+
+   <copyright url="https://github.com/douglashiura/us-uid">
+      There is no license
+   </copyright>
+
+   <license url="https://github.com/douglashiura/us-uid">
+      There is no license
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.debug.core" version="3.10.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.launching" version="3.8.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.11.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.debug.ui" version="3.11.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core" version="3.11.2" match="greaterOrEqual"/>
+      <import plugin="org.apache.httpcomponents.httpcore" version="4.4.9" match="greaterOrEqual"/>
+      <import plugin="org.apache.httpcomponents.httpclient" version="4.5.5" match="greaterOrEqual"/>
+      <import plugin="com.google.gson"/>
+      <import plugin="org.eclipse.core.filesystem"/>
+      <import plugin="org.eclipse.equinox.launcher"/>
+   </requires>
+
+   <plugin
+         id="us_uid"
+         download-size="0"
+         install-size="0"
+         version="1.0.11"/>
+
+</feature>

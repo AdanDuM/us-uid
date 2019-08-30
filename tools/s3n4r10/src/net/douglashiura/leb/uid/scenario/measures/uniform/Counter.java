@@ -3,8 +3,8 @@ package net.douglashiura.leb.uid.scenario.measures.uniform;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.douglashiura.leb.uid.scenario.Input;
-import net.douglashiura.leb.uid.scenario.Output;
+import net.douglashiura.us.serial.Input;
+import net.douglashiura.us.serial.Output;
 
 class Counter {
 	private List<Input> uniformInputs;

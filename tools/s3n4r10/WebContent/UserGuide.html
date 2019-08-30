@@ -1,0 +1,175 @@
+
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+	xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>User scenario</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+<body style=" background: #ddd;">
+	<section style="max-width: 700px;">
+
+		<h1 style="background-color: #dddddd;">Documentation</h1>
+
+		<h2>Overview</h2>
+
+		<p>The User Scenario through User Interaction Diagrams (US-UIDs)
+			are a format of automated acceptance tests. They are created by Web
+			browser and executed by Eclipse Plug-in. The Figure 1 shows the
+			framework architecture.</p>
+		<div align="left">
+			<img alt="architecture scenario"
+				title="Figure 1. Framework architecture."
+				src="resources/images/architecture.svg"><br /> <span>Figure
+				1. Framework architecture.</span>
+		</div>
+		<section>
+			<p>The framework is composed by:</p>
+			<ul>
+				<li><a href="#editor">Web editor</a> - it is used by
+					customers/user to create US-UIDs;</li>
+				<li><a href="#plugin">Eclipse plug-in </a> - it is user by
+					developers to tests automation.</li>
+			</ul>
+		</section>
+
+		<h2 style="margin-top: 30px;" id="editor">Web editor</h2>
+		<p>
+			At <a href="http://agil.inf.ufsc.br/us">http://agil.inf.ufsc.br/us</a>
+			is possible create an user account. After that the user is created,
+			it is possible to create projects and in each project create the
+			US-UIDs. The Figure 2.0 shows the authentication page.
+		</p>
+		<div align="left">
+			<img alt="Scenario authentication"
+				title="Figure 2.0 - Authentication page"
+				src="resources/images/authentication.png"><br /> <span
+				style="padding-top: 30px;">Figure 2.0 - Authentication page.</span>
+		</div>
+		<p>The Figure 2.1 shows the page to create projects. The projects
+			are a way of organizing scenarios.</p>
+		<div align="left">
+			<img alt="Projects page" title="Figure 2.1 - Projets page"
+				src="resources/images/projects.png"><br /> <span
+				style="margin-top: 30px;">Figure 2.1 - Projects page.</span>
+		</div>
+
+		<p>Within each project the US-UIDs files are created. The Figure
+			2.2 shows the page to create US-UIDs. The US-UIDs need to have and
+			package such as 'net.douglas.ufsc' and a name such as 'Calculator'.</p>
+		<div align="left">
+			<img alt="Scenarios page" title="Figure 2.2 - Scenarios page"
+				src="resources/images/scenarios.png"><br /> <span
+				style="margin-top: 30px;">Figure 2.2 - Scenarios page.</span>
+		</div>
+
+		<p>The Figure 2.3 shows the editor of US-UIDs.</p>
+		<div align="left">
+			<img alt="Scenario editor" title="Figure 1 - Scenario editor"
+				src="resources/images/editor.png"><br /> <span
+				style="margin-top: 30px;">Figure 2.3 - Sc3n4r10 editor.</span>
+		</div>
+
+		<section style="margin-top: 30px">
+			<h2 id="plugin">Eclipse plug-in</h2>
+			<h3>Installation</h3>
+
+			<ul>
+				<li>Menu: Eclipse -> Help -> Install New Software</li>
+				<li>Add Repository</li>
+				<li style="list-style-type: none;">
+					<ul>
+						<li>Name: Scenario</li>
+						<li>Location: <a
+							href=" http://agil.inf.ufsc.br/us/site-plugin/site.xml">
+								http://agil.inf.ufsc.br/us/site-plugin/</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div align="left">
+				<iframe width="700" height="480"
+					src="https://www.youtube.com/embed/-XFAjRrK5F8" frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</div>
+			<h3>Creating a java project with US-UIDs</h3>
+			Inside of Java project, the dependency <a
+				href="resources/dependency/us.jar">us.jar</a> need be installed. The
+			Figure 3.0 shows a Java project with the dependency.
+			<div align="left">
+				<img alt="Java project" title="Figure 3.0 - Java project"
+					src="resources/images/javaProject.png"><br /> <span
+					style="margin-top: 30px;">Figure 3.0 - Java project.</span>
+			</div>
+			<h3>Downloading of scenarios from Web</h3>
+			<p>Inside of Java project create a folder, such as 'scenario'. To
+				download the scenarios:</p>
+			<ul>
+				<li>Select the folder;</li>
+				<li>Click with mouse right button;</li>
+				<li>Click in download of US-UIDs;</li>
+				<li>Fill the server configuration.</li>
+			</ul>
+			The Figure 3.1 shows a server configuration.
+			<div align="left">
+				<img alt="Server configuration"
+					title="Figure 3.1 - Server configuration to download"
+					src="resources/images/download.png"><br /> <span
+					style="margin-top: 30px;">Figure 3.1 - Server configuration
+					to download.</span>
+			</div>
+			<p>The plug-in Scenario is composed by three view: Test, Fixture
+				name and Scenario. It is possible search 'scenario' and open the
+				view using the 'Quick Access' in eclipse. The Figure 3.2 shows the
+				Scenario views.</p>
+			<div align="left">
+				<img alt="Scenario views"
+					title="The Figure 3.2 shows Scenario views"
+					src="resources/images/plugin.png"><br /> <span
+					style="margin-top: 30px;">Figure 3.2 - Scenario views.</span>
+			</div>
+
+			<h3>Creating glue code</h3>
+			<ul>
+				<li>Select project (click in root path);</li>
+				<li>Click with mouse right button;</li>
+				<li>Click in Scenario "Generate glue code from Us-UIDs".</li>
+			</ul>
+			<p>Figure 3.3 shows filling the package to generate glue code
+				template.</p>
+			<div align="left">
+				<img alt="Fill package"
+					title="The Figure 3.3 filling the package to generate glue code template."
+					src="resources/images/generateGlueCode.png"><br /> <span
+					style="margin-top: 30px;">Figure 3.3 - filling the package
+					to generate glue code.</span>
+			</div>
+			<p>Figure 3.4 shows the glue code template generated. The glue
+				code need be filled. It should be linked the glue code with the
+				application.</p>
+			<div align="left">
+				<img alt="Glue code template"
+					title="The Figure 3.4 shows glue code template."
+					src="resources/images/glueCode.png"><br /> <span
+					style="margin-top: 30px;">Figure 3.3 - Glue code template.</span>
+			</div>
+
+			<h3>Running the scenario</h3>
+			<ul>
+				<li>Select the scenario from download folder;</li>
+				<li>Click with mouse right button;</li>
+				<li>Select "Run as";</li>
+				<li>Click in "Scenario".</li>
+			</ul>
+
+			<p>Figure 3.5 shows the Eclipse plug-in running the example of calculator scenario.</p>
+			<div align="left">
+				<img alt="Running scenario"
+					title="The Figure 3.5 shows scenario running"
+					src="resources/images/running.png"><br /> <span
+					style="margin-top: 30px;">Figure 3.5 - Scenario running.</span>
+			</div>
+		</section>
+	</section>
+</body>
+</html>

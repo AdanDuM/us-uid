@@ -9,10 +9,10 @@ public class CalculatorFixture3 {
 
 	}
 
-	public String getDisplay() {
+	public String getDisplay() throws Exception {
 		return "1";
 	}
 
-	public void toCalculatorFixture4() {
+	public void toCalculatorFixture4(String action) {
 	}
 }

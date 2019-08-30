@@ -1,12 +1,14 @@
 package net.douglashiura.leb.uid.scenario.measures.uniform;
 
-import net.douglashiura.leb.uid.scenario.Interaction;
+import java.util.List;
+
+import net.douglashiura.leb.uid.scenario.model.InteractionTree;
 
 public class AbsoluteUniformity {
 	private ElementsCluster clusterA;
 	private RelativeUniformity relative;
 
-	public AbsoluteUniformity(Interaction scenarioA, Interaction scenarioB) {
+	public AbsoluteUniformity(List<InteractionTree> scenarioA, List<InteractionTree> scenarioB) {
 		clusterA = new ElementsCluster(scenarioA);
 		ElementsCluster clusterB = new ElementsCluster(scenarioB);
 		Counter counter = new Counter(clusterA, clusterB);

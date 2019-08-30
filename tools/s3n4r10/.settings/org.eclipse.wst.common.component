@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="s3n4r10">
+        
+    <wb-module deploy-name="sc3n4r10">
+                
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="s3n4r10"/>
-        <property name="java-output-path" value="/s3n4r10/build/classes"/>
+        <dependent-module archiveName="us.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/us/us">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                
+        <property name="java-output-path" value="/sc3n4r10/build/classes"/>
+        <property name="context-root" value="sc3n4r10"/>
+            
     </wb-module>
+    
 </project-modules>

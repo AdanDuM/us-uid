@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.douglashiura.leb.uid.scenario.Input;
-import net.douglashiura.leb.uid.scenario.Interaction;
-import net.douglashiura.leb.uid.scenario.Output;
+import net.douglashiura.us.serial.Input;
+import net.douglashiura.us.serial.Interaction;
+import net.douglashiura.us.serial.Output;
 
 public class FixtureSharedMeasures {
 
@@ -29,23 +29,23 @@ public class FixtureSharedMeasures {
 			read(scenario);
 		}
 		for (Interaction interaction : states) {
-			statesMap.put(interaction.getFixture(), new ArrayList<>());
+			statesMap.put(interaction.getFixtureName(), new ArrayList<>());
 		}
 		for (Interaction interaction : states) {
-			statesMap.get(interaction.getFixture()).add(interaction);
+			statesMap.get(interaction.getFixtureName()).add(interaction);
 		}
 		for (Input input : inputs) {
-			inputsMap.put(input.getFixture(), new ArrayList<>());
+			inputsMap.put(input.getFixtureName(), new ArrayList<>());
 		}
 		for (Input input : inputs) {
-			inputsMap.get(input.getFixture()).add(input);
+			inputsMap.get(input.getFixtureName()).add(input);
 		}
 
 		for (Output output : outputs) {
-			outputsMap.put(output.getFixture(), new ArrayList<>());
+			outputsMap.put(output.getFixtureName(), new ArrayList<>());
 		}
 		for (Output output : outputs) {
-			outputsMap.get(output.getFixture()).add(output);
+			outputsMap.get(output.getFixtureName()).add(output);
 		}
 	}
 

@@ -1,0 +1,11 @@
+net.douglashiura.leb.uid.scenario.data.primitive.SimpleName{
+	douglas:hiura<'douglashiura'>[]
+}
+
+net.douglashiura.leb.uid.scenario.data.primitive.Email{
+	douglas:hiura:gmail<'douglashiura@gmail.com'>[]
+}
+
+net.douglashiura.leb.uid.scenario.data.User{
+	douglas<#douglas:hiura:gmail #douglas:hiura 'p4ssw'> []
+}

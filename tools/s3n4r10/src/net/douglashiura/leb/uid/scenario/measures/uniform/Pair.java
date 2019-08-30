@@ -1,12 +1,13 @@
 package net.douglashiura.leb.uid.scenario.measures.uniform;
 
 import java.io.IOException;
+import java.util.List;
 
-import org.xml.sax.SAXException;
-
-import net.douglashiura.leb.uid.scenario.Interaction;
-import net.douglashiura.leb.uid.scenario.ScenarioFromText;
+import net.douglashiura.leb.uid.scenario.EmptyScenarioException;
 import net.douglashiura.leb.uid.scenario.data.Scenario;
+import net.douglashiura.leb.uid.scenario.model.InteractionTree;
+import net.douglashiura.leb.uid.scenario.model.ScenarioFromText;
+import net.douglashiura.leb.uid.scenario.servlet.util.NotAFileException;
 
 public class Pair {
 
@@ -14,12 +15,13 @@ public class Pair {
 	private Scenario a;
 	private Scenario b;
 
-	public Pair(Scenario a, Scenario b) throws IOException, SAXException {
+	public Pair(Scenario a, Scenario b) throws IOException, EmptyScenarioException, NotAFileException {
 		this.a = a;
 		this.b = b;
-		Interaction scenarioA = new ScenarioFromText(a.getDocument(), a.getFile().getAbsolutePath()).firstState();
-		Interaction scenarioB = new ScenarioFromText(b.getDocument(), a.getFile().getAbsolutePath()).firstState();
+		List<InteractionTree> scenarioA = new ScenarioFromText(a.getDocument(),a.getVirtualName()).getInteractionsUnsctrutured();
+		List<InteractionTree> scenarioB = new ScenarioFromText(b.getDocument(),b.getVirtualName()).getInteractionsUnsctrutured();
 		uniform = new AbsoluteUniformity(scenarioA, scenarioB);
+
 	}
 
 	public AbsoluteUniformity getUniform() {

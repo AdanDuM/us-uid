@@ -48,13 +48,14 @@
 	var app;
 	$(window).load(function() {
 		var scenarioFile = "${param.scenario}";
+		user = "${param.user}";
+		project = "${param.project}"
 		this.app = new example.Application();
 		this.app.setScenarioFile(scenarioFile);
 		new br.ufsc.leb.uid.scenario.io.Store(this.app.view).load();
 		if (this.app.view.getFigures().asArray().length < 1) {
 			this.app.view.addFigure(new br.ufsc.leb.uid.scenario.Interacao());
 		}
-
 	});
 </script>
 
@@ -64,7 +65,8 @@
 <body>
 	<div id="container">
 		<div id="logo" style="margin-top: 0px;">
-			<a href="http://${header['host']}${pageContext.request.contextPath}">Sc3n4r10</a>
+			<a id="project"
+				href="http://${header['host']}${pageContext.request.contextPath}/App.jsp?user=${param.user}&project=${param.project}">Scenario</a>
 		</div>
 		<div id="toolbar" class="navbar-default"></div>
 		<div id="propertyPane" style="margin-top: 10px;">

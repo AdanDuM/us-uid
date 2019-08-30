@@ -1,35 +1,26 @@
 package net.douglashiura.us.serial;
 
-import java.awt.Color;
 import java.io.Serializable;
+import java.util.UUID;
 
 public class Result implements Serializable {
-	public enum Results {
-		OK(Color.GREEN), ERRO(Color.RED), FAIL(Color.BLUE), UN_EXECUTED(Color.BLACK), END(Color.BLACK);
-		private Color color;
-
-		private Results(Color color) {
-			this.color = color;
-		}
-
-		public Color getColor() {
-			return color;
-		}
-	}
 
 	private static final long serialVersionUID = 1L;
-	private String id;
+	public static final String SPLIT = "<##SPLIT##>";
+	private UUID uuid;
 	private Results result;
 	private String actual;
+	private Integer index;
 
-	public Result(String id, Results result, String actual) {
-		this.id = id;
+	public Result(UUID uuid, Integer index, Results result, String actual) {
+		this.uuid = uuid;
+		this.index = index;
 		this.result = result;
 		this.actual = actual;
 	}
 
-	public String getId() {
-		return id;
+	public UUID getUuid() {
+		return uuid;
 	}
 
 	public Results getResult() {
@@ -39,4 +30,9 @@ public class Result implements Serializable {
 	public String getActual() {
 		return actual;
 	}
+
+	public Integer getIndex() {
+		return index;
+	}
+
 }

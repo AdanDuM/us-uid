@@ -21,24 +21,24 @@ example.PropertyPane = Class.extend({
 			this.templateView.close();
 			this.templateView = null;
 		}
-
 		this.html.html("");
 		this.shows(figure);
 
 	},
 
 	shows : function(figure) {
-		if (figure instanceof br.ufsc.leb.uid.scenario.Interacao
-				|| figure instanceof br.ufsc.leb.uid.scenario.Transaction) {
+		if (figure instanceof br.ufsc.leb.uid.scenario.Interacao) {
 			this.templateView = new FunctionalDataInteractionView({
 				model : figure
 			});
-		} else if (figure instanceof draw2d.shape.node.Node) {
+		} else if (figure instanceof br.ufsc.leb.uid.scenario.UserInput
+				|| figure instanceof br.ufsc.leb.uid.scenario.SystemOutput) {
 			this.templateView = new FunctionalDataInputOutputView({
 				model : figure
 			});
 		}
-		this.html.append(this.templateView.render().$el);
+		if (this.templateView != null)
+			this.html.append(this.templateView.render().$el);
 
 	}
 });

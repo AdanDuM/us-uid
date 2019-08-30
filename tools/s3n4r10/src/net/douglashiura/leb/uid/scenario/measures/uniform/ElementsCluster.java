@@ -3,26 +3,26 @@ package net.douglashiura.leb.uid.scenario.measures.uniform;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.douglashiura.leb.uid.scenario.Input;
-import net.douglashiura.leb.uid.scenario.Interaction;
-import net.douglashiura.leb.uid.scenario.Output;
+import net.douglashiura.leb.uid.scenario.model.InteractionTree;
+import net.douglashiura.us.serial.Input;
+import net.douglashiura.us.serial.Output;
 
 public class ElementsCluster {
 	private List<Input> inputs;
 	private List<Output> outputs;
 
-	public ElementsCluster(Interaction scenario) {
+	public ElementsCluster(List<InteractionTree> scenarioA) {
 		inputs = new ArrayList<>();
 		outputs = new ArrayList<>();
-		readAll(scenario);
-
+		for (InteractionTree interactionTree : scenarioA) {
+			readAll(interactionTree);
+		}
 	}
-	private void readAll(Interaction scenario) {
+
+	private void readAll(InteractionTree scenario) {
 		inputs.addAll(scenario.getInputs());
 		outputs.addAll(scenario.getOutputs());
-		if (scenario.getTransaction() != null) {
-			readAll(scenario.getTransaction().getTarget());
-		}
+
 	}
 
 	public List<Input> getInputs() {

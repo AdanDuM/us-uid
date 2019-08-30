@@ -4,19 +4,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.xml.sax.SAXException;
-
+import net.douglashiura.leb.uid.scenario.EmptyScenarioException;
 import net.douglashiura.leb.uid.scenario.data.Scenario;
+import net.douglashiura.leb.uid.scenario.servlet.util.NotAFileException;
 
 public class Pairs {
-	public static List<Pair> pairs(List<Scenario> scenaries) throws IOException {
+	public static List<Pair> pairs(List<Scenario> scenarios) throws IOException, NotAFileException {
 		List<Pair> pairs = new ArrayList<>();
-		for (int i = 0; i < scenaries.size(); i++) {
-			for (int j = 0; j < scenaries.size(); j++) {
+		for (int i = 0; i < scenarios.size(); i++) {
+			for (int j = 0; j < scenarios.size(); j++) {
 				if (i != j) {
 					try {
-						pairs.add(new Pair(scenaries.get(i), scenaries.get(j)));
-					} catch (SAXException e) {
+						pairs.add(new Pair(scenarios.get(i), scenarios.get(j)));
+					} catch (EmptyScenarioException e) {
+
 					}
 				}
 			}

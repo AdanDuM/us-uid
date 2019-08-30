@@ -1,0 +1,91 @@
+
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+	xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>User scenario</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="resources/uid/canvas2d/jquery-1.10.2.min.js"></script>
+<script src="resources/authentication.js"></script>
+</head>
+<body
+	style="text-align: center; width: 100%; padding: 0px; margin: 0px;">
+	<div id="top"
+		style="color: white; text-align: left; background-color: #3f51b5; padding: 10px;">
+		<a id="tool" style="color: white;"
+			href="http://${header['host']}${pageContext.request.contextPath}/">Scenario</a>
+		<div style="float: right;">
+			<span><a style="color: white;" href="UserGuide.html"
+				id="userGuide">User Guide</a></span>
+		</div>
+	</div>
+	<div id="content"
+		style="background-image: url(resources/images/scenario.svg); background-repeat: no-repeat; margin: 10px;">
+		<form id="authentication" onsubmit="authentication();return false;"
+			action="">
+			<h2>
+				<span id="authentication_title">Authentication</span>
+			</h2>
+			<div align="center">
+				<table style="text-align: center;">
+					<tbody>
+						<tr>
+							<td><input id="authentication_user" name="user" size="50"
+								placeholder="User or e-mail" /></td>
+						</tr>
+						<tr>
+							<td><input id="authentication_password" type="password" name="password"
+								size="50" placeholder="Password" /></td>
+						</tr>
+						<tr>
+							<td><label id="errorAuthentication"
+								style="display: none;"><span style="color:red;">Authentication error!</span></label></td>
+						</tr>
+						<tr>
+							<td><button id="authentication_enter">Enter</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+		<br />
+		<form id="newAccount" onsubmit="anotherCreate();return false;" >
+			<h2>
+				<span id="newAccount_title">New account</span>
+			</h2>
+			<div align="center">
+				<table style="text-align: center;">
+					<tbody>
+						<tr>
+							<td><input name="email" id="newAccount_email" size="50"
+								placeholder="E-mail" /></td>
+						</tr>
+						<tr>
+							<td><label id="emailInvalid" style="display: none;"><span
+									style="color: red;">Type an e-mail!</span></label> <label
+								id="emailUnavailable" style="display: none;"><span
+									style="color: red;">E-mail unavailable!</span></label></td>
+						</tr>
+						<tr>
+							<td><input name="user" id="newAccount_user" size="50"
+								placeholder="User" /></td>
+						</tr>
+						<tr>
+							<td><label id="userInvalid" style="display: none;"><span
+									style="color: red;">Type only letters or numbers!</span></label> <label
+								id="userUnavailable" style="display: none;"><span
+									style="color: red;">User unavailable!</span></label></td>
+						</tr>
+						<tr>
+							<td><input type="password" name="password"
+								id="newAccount_password" size="50" placeholder="Password" /></td>
+						</tr>
+						<tr>
+							<td><button id="createUser">Create</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

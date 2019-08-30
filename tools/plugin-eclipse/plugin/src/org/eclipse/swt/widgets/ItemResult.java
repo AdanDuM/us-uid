@@ -2,28 +2,38 @@ package org.eclipse.swt.widgets;
 
 import org.eclipse.swt.SWT;
 
-import net.douglashiura.us.project.util.FileScenario;
+import net.douglashiura.scenario.plugin.type.InteractionGeometry;
+import net.douglashiura.scenario.plugin.type.Rateable;
+import net.douglashiura.scenario.plugin.type.TransactionGeometry;
+import net.douglashiura.scenario.project.util.FileScenario;
 import net.douglashiura.us.serial.Result;
-import net.douglashiura.usuid.plugin.type.Interaction;
-import net.douglashiura.usuid.plugin.type.Rateable;
-import net.douglashiura.usuid.plugin.type.Transaction;
 
 public class ItemResult extends TreeItem {
 
 	private Rateable element;
 	private Result result;
-	private ItemScenario item;
+	private FileScenario fileScenario;
 
-	public ItemResult(ItemScenario item, Rateable element, Result result) {
+	public ItemResult(ItemScenario item, Rateable element, Result result, FileScenario scenario) {
+		this((TreeItem) item, element, result, scenario);
+	}
+
+	public ItemResult(ItemPath item, Rateable element, Result result, FileScenario scenario) {
+		this((TreeItem) item, element, result, scenario);
+	}
+
+	private ItemResult(TreeItem item, Rateable element, Result result,FileScenario fileScenario) {
 		super(item, SWT.NONE);
-		this.item = item;
 		this.element = element;
 		this.result = result;
+		this.fileScenario = fileScenario;
 		String identification = "";
-		if (Interaction.class.equals(element.getType()) || Transaction.class.equals(element.getType()))
-			identification = element.getFixture();
-		else
+		if (InteractionGeometry.class.equals(element.getType())
+				|| TransactionGeometry.class.equals(element.getType())) {
+			identification = element.getFixtureName();
+		} else {
 			identification = element.getValue();
+		}
 		setText(String.format("(%s) %s", result.getResult(), identification));
 	}
 
@@ -35,7 +45,8 @@ public class ItemResult extends TreeItem {
 		return result;
 	}
 
-	public FileScenario getItemScenario() {
-		return item.getScenario();
+	public FileScenario getScenario() {
+		return fileScenario;
 	}
+
 }

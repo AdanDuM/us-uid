@@ -2,10 +2,10 @@ package net.douglashiura.leb.uid.scenario.measures.uniform;
 
 public class RelativeUniformity {
 
-	private Integer uniformInputs;
-	private Integer uniformOutputs;
-	private Integer nonUniformInputs;
-	private Integer nonUniformOutputs;
+	private Integer uniformInputs=0;
+	private Integer uniformOutputs=0;
+	private Integer nonUniformInputs=0;
+	private Integer nonUniformOutputs=0;
 
 	public Float getUniformity() {
 		Integer uniform = uniformInputs + uniformOutputs;

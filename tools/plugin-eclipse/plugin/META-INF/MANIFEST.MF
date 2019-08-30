@@ -1,9 +1,9 @@
-Manifest-Version: 1.0
+Manifest-Version: 1.0.11
 Bundle-ManifestVersion: 2
 Bundle-Name: us_uid
 Bundle-SymbolicName: us_uid;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: net.douglashiura.usuid.plugin.Activator
+Bundle-Version: 1.0.11
+Bundle-Activator: net.douglashiura.scenario.plugin.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.editors,
@@ -11,9 +11,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.jdt.launching;bundle-version="3.8.0",
  org.eclipse.ui.ide;bundle-version="3.11.0",
  org.eclipse.debug.ui;bundle-version="3.11.101",
- org.eclipse.jdt.core;bundle-version="3.11.2"
+ org.eclipse.jdt.core;bundle-version="3.11.2",
+ org.apache.httpcomponents.httpcore;bundle-version="4.4.9",
+ org.apache.httpcomponents.httpclient;bundle-version="4.5.5"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-ActivationPolicy: lazy
 Import-Package: 
  com.google.gson;version="2.2.4",
  com.google.gson.internal;version="2.2.4",
@@ -21,3 +22,4 @@ Import-Package:
  org.eclipse.core.launcher,
  org.eclipse.jdt.core,
  org.eclipse.jdt.internal.core
+Automatic-Module-Name: us_uid

@@ -1,0 +1,73 @@
+[
+  {
+    "type": "br.ufsc.leb.uid.scenario.Interacao",
+    "id": "52f911b1-2936-5095-5c2a-68c75380adfd",
+    "x": 186,
+    "y": 174,
+    "width": 183,
+    "height": 133,
+    "alpha": 1,
+    "userData": {
+      "result": "",
+      "model": "Origin"
+    },
+    "cssClass": "br_ufsc_leb_uid_scenario_Interacao",
+    "ports": [],
+    "bgColor": "#F0F0F0",
+    "color": "#333333",
+    "stroke": 1,
+    "radius": 500
+  },
+  {
+    "type": "br.ufsc.leb.uid.scenario.UserInput",
+    "id": "4a57c464-3015-df1e-7593-5dafb0662afa",
+    "x": 243,
+    "y": 205,
+    "width": 43,
+    "height": 21.199999809265137,
+    "alpha": 1,
+    "userData": {
+      "result": "",
+      "model": "input1"
+    },
+    "cssClass": "br_ufsc_leb_uid_scenario_UserInput",
+    "composite": "52f911b1-2936-5095-5c2a-68c75380adfd",
+    "ports": [],
+    "bgColor": "none",
+    "color": "#1B1B1B",
+    "stroke": 1,
+    "radius": 0,
+    "text": "Text2",
+    "outlineStroke": 0,
+    "outlineColor": "none",
+    "fontSize": 12,
+    "fontColor": "#080808",
+    "fontFamily": null
+  },
+  {
+    "type": "br.ufsc.leb.uid.scenario.UserInput",
+    "id": "7367ab47-c17c-dcae-d8a2-37ebb69d7442",
+    "x": 244,
+    "y": 257,
+    "width": 43,
+    "height": 21.199999809265137,
+    "alpha": 1,
+    "userData": {
+      "result": "",
+      "model": "input2"
+    },
+    "cssClass": "br_ufsc_leb_uid_scenario_UserInput",
+    "composite": "52f911b1-2936-5095-5c2a-68c75380adfd",
+    "ports": [],
+    "bgColor": "none",
+    "color": "#1B1B1B",
+    "stroke": 1,
+    "radius": 0,
+    "text": "Text",
+    "outlineStroke": 0,
+    "outlineColor": "none",
+    "fontSize": 12,
+    "fontColor": "#080808",
+    "fontFamily": null
+  }
+]

@@ -2550,7 +2550,7 @@ draw2d.geo.Rectangle = draw2d.geo.Point.extend({
      */
     determineOctant: function( r2){
         
-        var HISTERESE= 3; // Tolleranz um diese vermieden wird, dass der Octant "8" zurückgegeben wird
+        var HISTERESE= 3; // Tolleranz um diese vermieden wird, dass der Octant "8" zurï¿½ckgegeben wird
         
         var ox = this.x+HISTERESE;
         var oy = this.y+HISTERESE;
@@ -7802,7 +7802,7 @@ draw2d.layout.connection.MuteableManhattanConnectionRouter = draw2d.layout.conne
         
         horizontal = !horizontal;
 
-        // dot product is zero if the vector orthogonal (90°)
+        // dot product is zero if the vector orthogonal (90ï¿½)
         if (startNormal.dot(endNormal) === 0) {
             if ((startNormal.dot(direction) >= 0)  && (endNormal.dot(direction) <= 0)) {
                 // 0
@@ -23600,18 +23600,18 @@ draw2d.shape.basic.Line = draw2d.Figure.extend({
     * Returns the angle of the line in degree.
     *
     * <pre>
-    *                                 270°
+    *                                 270ï¿½
     *                               |
     *                               |
     *                               |
     *                               |
-    * 180° -------------------------+------------------------> +X
-    *                               |                        0°
+    * 180ï¿½ -------------------------+------------------------> +X
+    *                               |                        0ï¿½
     *                               |
     *                               |
     *                               |
     *                               V +Y
-    *                              90°
+    *                              90ï¿½
     * </pre>
     * @return {Number}
     **/
@@ -33115,12 +33115,12 @@ draw2d.shape.layout.FlexGridLayout= draw2d.shape.layout.Layout.extend({
        for(var i=0;i<figures.getSize();i++){
            var figure = figures.get(i);
            var cell = figure.__cellConstraint;
-       		// ermitteln der derzeitig zur verfügung stehenden weite
+       		// ermitteln der derzeitig zur verfï¿½gung stehenden weite
            this.gridDef.min_width[cell.col]=Math.max(this.gridDef.min_width[cell.col],figure.getMinWidth());
        		
        		// Falls das Elemente eine y_span hat, dann versuchen ob es auf die ganze
-       		// höhe rein passt. Wenn nicht wird der Teil der 'grow' angegeben hat verändert.
-       		// Wenn kein Element 'grow' angegeben hat, dann wird das letzte Element verändert
+       		// hï¿½he rein passt. Wenn nicht wird der Teil der 'grow' angegeben hat verï¿½ndert.
+       		// Wenn kein Element 'grow' angegeben hat, dann wird das letzte Element verï¿½ndert
        		if(cell.rowspan>1){
        			var eHeight = figure.getMinHeight();         
        			var cHeight = this.cellHeight(cell.row,cell.row+cell.rowspan);

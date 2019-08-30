@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>s3n4r10</name>
+	<name>sc3n4r10</name>
 	<comment></comment>
 	<projects>
+		<project>us</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

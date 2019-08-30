@@ -3,7 +3,7 @@ package net.douglashiura.leb.uid.scenario.ml.data;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.douglashiura.leb.uid.scenario.Interaction;
+import net.douglashiura.us.serial.Interaction;
 
 public class DataInteractionFromUS {
 	private List<DataInteraction> instances;
@@ -33,8 +33,8 @@ public class DataInteractionFromUS {
 		instance.setStartDistance(interactionsRead);
 		instance.setEndDistance(interactionsForRead);
 		instance.setDeep(deep);
-		instance.setId(first.getId());
-		String fixture = first.getFixture();
+		instance.setId(first.getUuid());
+		String fixture = first.getFixtureName();
 		fixture = fixture != null && fixture.isEmpty() ? null : fixture;
 		instance.setFixture(fixture);
 		instance.setInputs(first.getInputs().size());

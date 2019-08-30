@@ -3,10 +3,10 @@ package net.douglashiura.leb.uid.scenario.measures;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.douglashiura.leb.uid.scenario.Input;
-import net.douglashiura.leb.uid.scenario.Interaction;
-import net.douglashiura.leb.uid.scenario.Output;
-import net.douglashiura.leb.uid.scenario.Transaction;
+import net.douglashiura.us.serial.Input;
+import net.douglashiura.us.serial.Interaction;
+import net.douglashiura.us.serial.Output;
+import net.douglashiura.us.serial.Transaction;
 
 public class DescriptiveMeasures {
 
