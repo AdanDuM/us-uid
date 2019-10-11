@@ -15,13 +15,16 @@ public class PiconWithUsuid {
 		contexto = new Contexto(Arquivos.getInstance().explodir());
 	}
 
-	public void settings(Object object)
-			throws ProblemaDeCompilacaoException, IllegalArgumentException, IllegalAccessException {
+	public void settings(Object object) throws ProblemaDeCompilacaoException, IllegalAccessException {
+
 		Field[] declarado = object.getClass().getDeclaredFields();
 		for (Field field : declarado) {
 			field.setAccessible(true);
 			if (field.get(object) == null) {
-				field.set(object, contexto.get(Bloco.camelCase(field.getName())));
+				try {
+					field.set(object, contexto.get(Bloco.camelCase(field.getName())));
+				} catch (Exception nonInstance) {
+				}
 			}
 		}
 	}

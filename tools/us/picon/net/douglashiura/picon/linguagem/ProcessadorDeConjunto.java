@@ -17,12 +17,12 @@ public class ProcessadorDeConjunto {
 	public void processar(Deque<Parte> emClasse) throws ProblemaDeCompilacaoException {
 		Parte parteClasse = emClasse.pop();
 		try {
-			Class<?> klasse = Class.forName(parteClasse.valor());
+			Class<?> klasse = Carregadores.buscarClasse(parteClasse.valor());
 			ProcessadorDeCampos processador = new ProcessadorDeCampos(qualificadores);
 			emClasse.pop();
 			while (!"}".equals(emClasse.peek().valor())) {
 				Parte qualificador = emClasse.pop();
-				Objeto<?> objeto = new Objeto<>(klasse,parteClasse);
+				Objeto<?> objeto = new Objeto<>(klasse, parteClasse);
 				qualificadores.put(qualificador.valor(), objeto);
 				processador.processar(emClasse, objeto);
 			}
@@ -30,7 +30,6 @@ public class ProcessadorDeConjunto {
 		} catch (ClassNotFoundException e) {
 			throw new ProblemaDeCompilacaoException(e, parteClasse);
 		}
-
 	}
 
 }

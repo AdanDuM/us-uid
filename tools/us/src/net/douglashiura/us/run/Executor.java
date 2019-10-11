@@ -22,16 +22,18 @@ public class Executor {
 
 	private Executor(ObjectOutputStream write) {
 		this.write = write;
+
+	}
+
+	public void execute(Interaction firstState, Integer index) throws UnknownHostException, IOException {
 		try {
 			picon = new PiconWithUsuid();
 		} catch (ProblemaDeCompilacaoException e) {
 			message(null, 0, Results.END, e.getMessage());
 			e.printStackTrace();
 		}
-	}
-
-	public void execute(Interaction firstState, Integer index) throws UnknownHostException, IOException {
 		try {
+
 			new RecursiveExecutor(this, firstState, index);
 			message(null, index, Results.END, null);
 		} catch (ExceptionInExecution e) {
@@ -61,7 +63,7 @@ public class Executor {
 		socket.close();
 	}
 
-	public PiconWithUsuid getPicon() {
+	public PiconWithUsuid withPicon() {
 		return picon;
 	}
 

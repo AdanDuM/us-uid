@@ -33,7 +33,7 @@ public class RecursiveExecutor {
 			Class<?> klass = Annotations.getFixture(interaction.getFixtureName());			
 			instance = klass.getConstructors()[0].newInstance();
 			executor.message(interaction.getUuid(), index, Results.OK, null);
-			executor.getPicon().settings(instance);
+			executor.withPicon().settings(instance);
 		} catch (InstantiationException | IllegalAccessException | IOException | ClassNotFoundException
 				| IllegalArgumentException | URISyntaxException | ProblemaDeCompilacaoException
 				| InvocationTargetException | SecurityException e) {
